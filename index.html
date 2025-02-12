@@ -1,227 +1,187 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الخديوي</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-    direction: rtl;
-    color: #333;
-  }
-  header {
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  nav {
-    background-color: #1a1a1a;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #ffdd57;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  h2 {
-    color: #000000;
-    font-size: 2em;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  p {
-    line-height: 1.8;
-    font-size: 1.1em;
-    text-align: justify;
-    margin-bottom: 20px;
-  }
-  footer {
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1a1a1a;
-  }
-  .login-form {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
-  }
-  .login-form input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1.2em;
-  }
-  .login-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: #000000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-  }
-  .login-form button:hover {
-    background-color: #333333;
-  }
-  .error-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1a1a1a;
-    color: white;
-    font-size: 2em;
-  }
-  .admin-dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f7f7f7;
-    color: #333;
-    padding: 20px;
-  }
-  .admin-dashboard h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  .admin-dashboard p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  .user-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  .user-list li {
-    background-color: #eaeaea;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .user-list button {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .user-list button.reject {
-    background-color: red;
-  }
-  .user-list button.ban {
-    background-color: darkred;
-  }
-  .user-list button.unban {
-    background-color: orange;
-  }
-  .create-account-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1a1a1a;
-  }
-  .create-account-form {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
-  }
-  .create-account-form input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1.2em;
-  }
-  .create-account-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: #000000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-  }
-  .create-account-form button:hover {
-    background-color: #333333;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الخديوي</title>
+  <style>
+    /* أنماط CSS */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      color: #333;
+    }
+    header {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    nav {
+      background-color: #1a1a1a;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffdd57;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      color: #000000;
+      font-size: 2em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    p {
+      line-height: 1.8;
+      font-size: 1.1em;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1a1a1a;
+    }
+    .login-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1.2em;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 15px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
+    }
+    .login-form button:hover {
+      background-color: #333333;
+    }
+    .error-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 2em;
+    }
+    .admin-dashboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 20px;
+    }
+    .user-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .user-list li {
+      background-color: #eaeaea;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user-list button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .user-list button.reject {
+      background-color: red;
+    }
+    .user-list button.ban {
+      background-color: darkred;
+    }
+    .user-list button.unban {
+      background-color: orange;
+    }
+  </style>
+  <!-- إضافة Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 </head>
 <body>
 
-<!-- Default Login Page -->
+<!-- صفحة تسجيل الدخول -->
 <div class="login-container" id="loginPage">
   <form class="login-form" id="loginForm">
     <h2>تسجيل الدخول</h2>
-    <input type="text" id="username" placeholder="اسم المستخدم" required />
+    <input type="email" id="username" placeholder="البريد الإلكتروني" required />
     <input type="password" id="password" placeholder="كلمة المرور" required />
     <button type="submit">دخول</button>
     <p>ليس لديك حساب؟ <a href="#" onclick="showCreateAccountPage()">إنشاء حساب جديد</a></p>
   </form>
 </div>
 
-<!-- Create Account Page -->
+<!-- صفحة إنشاء حساب -->
 <div class="create-account-container" id="createAccountPage" style="display: none;">
   <form class="create-account-form" id="createAccountForm">
     <h2>إنشاء حساب جديد</h2>
-    <input type="text" id="newUsername" placeholder="اسم المستخدم الجديد" required />
+    <input type="email" id="newUsername" placeholder="البريد الإلكتروني" required />
     <input type="password" id="newPassword" placeholder="كلمة المرور الجديدة" required />
     <button type="submit">إنشاء الحساب</button>
     <p>لديك حساب بالفعل؟ <a href="#" onclick="showLoginPage()">تسجيل الدخول</a></p>
@@ -229,116 +189,58 @@
 </div>
 
 <script>
-  // بيانات تسجيل الدخول الافتراضية
-  const defaultUsers = [
-    { username: "pepo", password: "1234", isActive: true, isBanned: false },
-    { username: "testuser", password: "test123", isActive: false, isBanned: false },
-    { username: "banneduser", password: "banned123", isActive: true, isBanned: true }
-  ];
+  // تهيئة Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyA7MQsuy5s3rHxbLgVTUKS8Ry4HsT9mw_s",
+    authDomain: "elkhedawysite.firebaseapp.com",
+    projectId: "elkhedawysite",
+    storageBucket: "elkhedawysite.appspot.com",
+    messagingSenderId: "392947722509",
+    appId: "1:392947722509:web:7929485b2d53c8ea17e844",
+    measurementId: "G-R63FL8K85M"
+  };
 
-  // جلب البيانات من Local Storage أو استخدام البيانات الافتراضية
-  let users = JSON.parse(localStorage.getItem("users")) || defaultUsers;
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
 
-  // إضافة المشرف إذا لم يكن موجودًا
-  if (!users.some(user => user.username === "X")) {
-    users.push({ username: "X", password: "0", isActive: true, isBanned: false });
-    localStorage.setItem("users", JSON.stringify(users));
-  }
-
-  // حفظ البيانات في Local Storage
-  function saveUsers() {
-    localStorage.setItem("users", JSON.stringify(users));
-  }
-
-  // التحقق من صحة تسجيل الدخول
+  // تسجيل الدخول
   function authenticate(event) {
-    event.preventDefault(); // منع تحديث الصفحة
+    event.preventDefault();
+    const email = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-    const enteredUsername = document.getElementById("username").value.trim();
-    const enteredPassword = document.getElementById("password").value.trim();
-
-    const user = users.find(u => u.username === enteredUsername && u.password === enteredPassword);
-
-    if (user) {
-      if (user.isBanned) {
-        alert("الحساب محظور. الرجاء الاتصال بالمسؤول.");
-        return;
-      }
-      if (!user.isActive && user.username !== "X") { // المشرف مش محتاج موافقة
-        alert("الحساب في انتظار الموافقة.");
-        return;
-      }
-      if (enteredUsername === "X" && enteredPassword === "0") {
-        showAdminDashboard();
-      } else {
-        showMainContent();
-      }
-    } else {
-      showErrorPage();
-    }
+    auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (user.email === "elkhedawyx@gmail.com") { // تحقق إذا كان المشرف
+          showAdminDashboard();
+        } else {
+          showMainContent();
+        }
+      })
+      .catch((error) => {
+        alert("خطأ في تسجيل الدخول: " + error.message);
+      });
   }
 
-  // عرض صفحة إنشاء الحساب
-  function showCreateAccountPage() {
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("createAccountPage").style.display = "flex";
-  }
-
-  // عرض صفحة تسجيل الدخول
-  function showLoginPage() {
-    document.getElementById("createAccountPage").style.display = "none";
-    document.getElementById("loginPage").style.display = "flex";
-  }
-
-  // إنشاء حساب جديد
+  // إنشاء حساب
   function createAccount(event) {
-    event.preventDefault(); // منع تحديث الصفحة
+    event.preventDefault();
+    const email = document.getElementById("newUsername").value.trim();
+    const password = document.getElementById("newPassword").value.trim();
 
-    const newUsername = document.getElementById("newUsername").value.trim();
-    const newPassword = document.getElementById("newPassword").value.trim();
-
-    // التحقق من أن اليوزر غير موجود بالفعل
-    const isUserExists = users.some(user => user.username === newUsername);
-    if (isUserExists) {
-      alert("اسم المستخدم موجود بالفعل. الرجاء اختيار اسم مستخدم آخر.");
-      return;
-    }
-
-    // إضافة الحساب الجديد لقائمة الحسابات المعلقة
-    users.push({ username: newUsername, password: newPassword, isActive: false, isBanned: false });
-    saveUsers(); // حفظ البيانات في Local Storage
-    alert("تم إنشاء الحساب بنجاح! في انتظار موافقة المسؤول.");
-    showLoginPage(); // العودة لصفحة تسجيل الدخول
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        alert("تم إنشاء الحساب بنجاح! يمكنك تسجيل الدخول الآن.");
+        showLoginPage();
+      })
+      .catch((error) => {
+        alert("خطأ في إنشاء الحساب: " + error.message);
+      });
   }
 
-  // عرض الصفحة الرئيسية (للعميل)
-  function showMainContent() {
-    document.body.innerHTML = `
-      <header>
-        <h1>الخديوي</h1>
-      </header>
-
-      <nav>
-        <a href="#about-allah" onclick="showSection('about-allah')">عن ربنا في الإسلام</a>
-        <a href="#prophet-muhammad" onclick="showSection('prophet-muhammad')">عن النبي محمد ﷺ</a>
-        <a href="#prophetic-sira" onclick="showSection('prophetic-sira')">السيرة النبوية</a>
-        <a href="#peace-in-islam" onclick="showSection('peace-in-islam')">السلام في الإسلام</a>
-        <a href="#muslims-and-non-muslims" onclick="showSection('muslims-and-non-muslims')">كيف يعامل المسلمون الكفار</a>
-        <a href="#contact-us" onclick="showSection('contact-us')">اتصل بنا</a>
-      </nav>
-
-      <div class="container" id="content"></div>
-
-      <footer>
-        <p>&copy; 2023 موقع الخديوي</p>
-      </footer>
-    `;
-
-    // عرض القسم الافتراضي
-    showSection('about-allah');
-  }
-
-  // عرض لوحة الإدارة (للمشرف)
+  // عرض لوحة التحكم (للمشرف)
   function showAdminDashboard() {
     document.body.innerHTML = `
       <header>
@@ -347,108 +249,94 @@
       <button onclick="window.location.href='index.html'">العودة إلى الموقع</button>
       <h2>إدارة الحسابات</h2>
       <ul class="user-list" id="active-users"></ul>
-      <h2>الحسابات المعلقة</h2>
-      <ul class="user-list" id="pending-users"></ul>
       <h2>الحسابات المحظورة</h2>
       <ul class="user-list" id="banned-users"></ul>
     `;
 
     // عرض الحسابات النشطة
-    const activeUsersList = document.getElementById("active-users");
-    activeUsersList.innerHTML = "";
-    users.forEach((user, index) => {
-      if (user.isActive && !user.isBanned && user.username !== "X") {
-        const li = document.createElement("li");
-        li.textContent = user.username;
+    db.collection("users").where("isBanned", "==", false).get()
+      .then((querySnapshot) => {
+        const activeUsersList = document.getElementById("active-users");
+        activeUsersList.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+          const user = doc.data();
+          const li = document.createElement("li");
+          li.textContent = user.email;
 
-        const banButton = document.createElement("button");
-        banButton.textContent = "حظر";
-        banButton.classList.add("ban");
-        banButton.onclick = () => banUser(index);
+          const banButton = document.createElement("button");
+          banButton.textContent = "حظر";
+          banButton.classList.add("ban");
+          banButton.onclick = () => banUser(doc.id);
 
-        li.appendChild(banButton);
-        activeUsersList.appendChild(li);
-      }
-    });
-
-    // عرض الحسابات المعلقة
-    const pendingUsersList = document.getElementById("pending-users");
-    pendingUsersList.innerHTML = "";
-    users.forEach((user, index) => {
-      if (!user.isActive && !user.isBanned) {
-        const li = document.createElement("li");
-        li.textContent = `${user.username} - ${user.password}`;
-
-        const activateButton = document.createElement("button");
-        activateButton.textContent = "تفعيل";
-        activateButton.onclick = () => activateUser(index);
-
-        const rejectButton = document.createElement("button");
-        rejectButton.textContent = "رفض";
-        rejectButton.classList.add("reject");
-        rejectButton.onclick = () => rejectUser(index);
-
-        li.appendChild(activateButton);
-        li.appendChild(rejectButton);
-        pendingUsersList.appendChild(li);
-      }
-    });
+          li.appendChild(banButton);
+          activeUsersList.appendChild(li);
+        });
+      });
 
     // عرض الحسابات المحظورة
-    const bannedUsersList = document.getElementById("banned-users");
-    bannedUsersList.innerHTML = "";
-    users.forEach((user, index) => {
-      if (user.isBanned) {
-        const li = document.createElement("li");
-        li.textContent = user.username;
+    db.collection("users").where("isBanned", "==", true).get()
+      .then((querySnapshot) => {
+        const bannedUsersList = document.getElementById("banned-users");
+        bannedUsersList.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+          const user = doc.data();
+          const li = document.createElement("li");
+          li.textContent = user.email;
 
-        const unbanButton = document.createElement("button");
-        unbanButton.textContent = "إلغاء الحظر";
-        unbanButton.classList.add("unban");
-        unbanButton.onclick = () => unbanUser(index);
+          const unbanButton = document.createElement("button");
+          unbanButton.textContent = "إلغاء الحظر";
+          unbanButton.classList.add("unban");
+          unbanButton.onclick = () => unbanUser(doc.id);
 
-        li.appendChild(unbanButton);
-        bannedUsersList.appendChild(li);
-      }
-    });
+          li.appendChild(unbanButton);
+          bannedUsersList.appendChild(li);
+        });
+      });
   }
 
   // حظر حساب
-  function banUser(index) {
-    if (users[index].username === "pepo") {
-      alert("لا يمكن حظر الحساب الذي تسجل به.");
-      return;
-    }
-    users[index].isBanned = true;
-    users[index].isActive = false;
-    saveUsers(); // حفظ التغييرات
-    alert("تم حظر الحساب بنجاح!");
-    showAdminDashboard(); // تحديث القائمة
+  function banUser(userId) {
+    db.collection("users").doc(userId).update({ isBanned: true })
+      .then(() => {
+        alert("تم حظر الحساب بنجاح!");
+        showAdminDashboard();
+      })
+      .catch((error) => {
+        alert("خطأ في حظر الحساب: " + error.message);
+      });
   }
 
-  // تفعيل حساب
-  function activateUser(index) {
-    users[index].isActive = true;
-    saveUsers(); // حفظ التغييرات
-    alert("تم تفعيل الحساب بنجاح!");
-    showAdminDashboard(); // تحديث القائمة
+  // إلغاء حظر حساب
+  function unbanUser(userId) {
+    db.collection("users").doc(userId).update({ isBanned: false })
+      .then(() => {
+        alert("تم إلغاء حظر الحساب بنجاح!");
+        showAdminDashboard();
+      })
+      .catch((error) => {
+        alert("خطأ في إلغاء حظر الحساب: " + error.message);
+      });
   }
 
-  // رفض حساب
-  function rejectUser(index) {
-    users[index].isRejected = true;
-    saveUsers(); // حفظ التغييرات
-    alert("تم رفض الحساب بنجاح!");
-    showAdminDashboard(); // تحديث القائمة
-  }
-
-  // إلغاء الحظر عن حساب
-  function unbanUser(index) {
-    users[index].isBanned = false;
-    users[index].isActive = true;
-    saveUsers(); // حفظ التغييرات
-    alert("تم إلغاء الحظر عن الحساب بنجاح!");
-    showAdminDashboard(); // تحديث القائمة
+  // عرض المحتوى الرئيسي
+  function showMainContent() {
+    document.body.innerHTML = `
+      <header>
+        <h1>الخديوي</h1>
+      </header>
+      <nav>
+        <a href="#about-allah" onclick="showSection('about-allah')">عن ربنا في الإسلام</a>
+        <a href="#prophet-muhammad" onclick="showSection('prophet-muhammad')">عن النبي محمد ﷺ</a>
+        <a href="#prophetic-sira" onclick="showSection('prophetic-sira')">السيرة النبوية</a>
+        <a href="#peace-in-islam" onclick="showSection('peace-in-islam')">السلام في الإسلام</a>
+        <a href="#muslims-and-non-muslims" onclick="showSection('muslims-and-non-muslims')">كيف يعامل المسلمون الكفار</a>
+        <a href="#contact-us" onclick="showSection('contact-us')">اتصل بنا</a>
+      </nav>
+      <div class="container" id="content"></div>
+      <footer>
+        <p>&copy; 2023 موقع الخديوي</p>
+      </footer>
+    `;
   }
 
   // عرض صفحة الخطأ
@@ -460,37 +348,9 @@
     `;
   }
 
-  // عرض الأقسام المختلفة
-  function showSection(sectionId) {
-    const contentDiv = document.getElementById('content');
-    contentDiv.innerHTML = getSectionContent(sectionId);
-  }
-
-  const sections = {
-    'about-allah': `<h2>عن ربنا في الإسلام</h2><p>الله هو الخالق الرازق...</p>`,
-    'prophet-muhammad': `<h2>عن النبي محمد ﷺ</h2><p>محمد بن عبد الله هو خاتم الأنبياء...</p>`,
-    'prophetic-sira': `<h2>السيرة النبوية</h2><p>${generateLongText()}</p>`, // نص طويل عن السيرة النبوية
-    'peace-in-islam': `<h2>السلام في الإسلام</h2><p>الإسلام دين السلام والمحبة...</p>`,
-    'muslims-and-non-muslims': `<h2>كيف يعامل المسلمون الكفار</h2><p>يجب على المسلمين أن يعاملوا غير المسلمين...</p>`,
-    'contact-us': `<h2>اتصل بنا</h2><p>للاتصال بنا، يرجى استخدام المعلومات التالية...</p>`
-  };
-
-  // دالة لتوليد نص طويل (كمثال)
-  function generateLongText() {
-    let longText = "السيرة النبوية هي قصة حياة النبي محمد ﷺ، بدءًا من مولده في مكة المكرمة عام 570 ميلادية، ومرورًا بطفولته وشبابه، ثم بعثته كنبي ورسول من الله. تشمل السيرة النبوية العديد من الأحداث المهمة مثل الهجرة إلى المدينة المنورة، والمعارك التي خاضها النبي، والعلاقات التي أقامها مع القبائل العربية، وصولًا إلى وفاته في عام 632 ميلادية. السيرة النبوية تعتبر مصدر إلهام للمسلمين في جميع أنحاء العالم، حيث تعلمهم الصبر والإخلاص والتضحية من أجل الدين.";
-    return longText.repeat(50); // تكرار النص كمثال
-  }
-
-  function getSectionContent(sectionId) {
-    return sections[sectionId] || `<p>المحتوى غير متاح الآن.</p>`;
-  }
-
-  // ربط دالة تسجيل الدخول بنموذج تسجيل الدخول
+  // ربط الدوال بالنماذج
   document.getElementById("loginForm")?.addEventListener("submit", authenticate);
-
-  // ربط دالة إنشاء الحساب بنموذج إنشاء الحساب
   document.getElementById("createAccountForm")?.addEventListener("submit", createAccount);
 </script>
-
 </body>
 </html>
